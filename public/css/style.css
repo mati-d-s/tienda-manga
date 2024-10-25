@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Establece la altura del body al 100% de la ventana */
+}
+
+header {
+    width: 100%;
+    background: black;
+    margin-bottom: 20px;
+    padding: 10px 0; /* Ajusta el espacio vertical */
+}
+
+header .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+header .logo {
+    color: #f2f2f2;
+    font-size: 36px;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    transition: all 500ms ease;
+}
+
+header nav a:hover {
+    background: #f56f3a;
+    border-radius: 50px;
+}
+
+main {
+    flex: 1; /* Permite que el main ocupe el espacio restante */
+}
+
+#titulo-shonen {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.producto-shonen {
+	display: flex;
+    gap: 20px;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+    width: 200px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.card img {
+    border-radius: 5px 5px 0 0;
+    width: 100%;
+	height: auto;
+}
+
+.card-container {
+    display: flex; /* Permite que las cards se alineen en una fila */
+    gap: 20px; /* Espacio entre las cards */
+    flex-wrap: wrap; /* Asegura que las cards se muevan a la siguiente línea si no hay suficiente espacio */
+    justify-content: center; /* Centra las cards en la sección */
+}
+
+
+.card:hover {
+    transform: scale(1.05); /* Efecto de aumento al pasar el mouse */
+}
+
+footer {
+    width: 100%;
+    background: black;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: auto;
+    padding: 0 10px;
+}
+
+footer .social-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 18px;
+}
+
+footer .social-links a:hover {
+    color: #f56f3a;
+}
+
+footer p {
+    margin: 10px 0;
+}
