@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
-    <title>Tienda de Mangas</title>
+	<link rel="shortcut icon" href="https://img.icons8.com/color/48/book.png" type="image/x-icon">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <title>MangaStore</title>
 </head>
 <body>
     
@@ -13,22 +16,25 @@
             <div class="logo">MangaStore</div>
             
             <nav>
-                <a href="#">Inicio</a>
+                <a href="index.html">Inicio</a>
                 <a href="#">Catalogo</a>
-                <a href="#">Reseñas</a>
+                <a href="./pages/reseña.html">Reseñas</a>
                 <a href="#">Contacto</a>
             </nav>
         </div>
     </header>
 
     <main>
-		<h1 id="titulo-shonen">Shonen</h1>
+		<div id="titulo-manga">
+			<h1>Shonen</h1>
+		</div>
 		<section class="producto-shonen">
 			<div class="card">
 				<img src="./assets/img/DB-super-22.webp" alt="Dragon Ball Super #22">
 				<div class="container">
 					<h4><b>Dragon Ball Super #22</b></h4>
-					<button>Comprar</button>
+					<p>$11.500</p>
+					<button id="btn">Comprar</button>
 				</div>
 			</div>
 	
@@ -36,7 +42,8 @@
 				<img src="./assets/img/Slam-dunk-15.webp" alt="Slam dunk #15">
 				<div class="container">
 					<h4><b>Slam Dunk #15</b></h4>
-					<button>Comprar</button>
+					<p>$15.000</p>
+					<button id="btn">Comprar</button>
 				</div>
 			</div>
 	
@@ -44,7 +51,8 @@
 				<img src="./assets/img/mob-psycho-one.webp" alt="Mob Psycho One #1">
 				<div class="container">
 					<h4><b>Mob Psycho One #1</b></h4>
-					<button>Comprar</button>
+					<p>$13.000</p>
+					<button id="btn">Comprar</button>
 				</div>
 			</div>
 	
@@ -52,7 +60,8 @@
 				<img src="./assets/img/one-piece-1.webp" alt="One Piece #1">
 				<div class="container">
 					<h4><b>One Piece #1</b></h4>
-					<button>Comprar</button>
+					<p>$13.000</p>
+					<button id="btn">Comprar</button>
 				</div>
 			</div>
 	
@@ -60,7 +69,8 @@
 				<img src="./assets/img/boku-hero-no-academia-36.webp" alt="Boku no hero academia #36">
 				<div class="container">
 					<h4><b>Boku No Hero Academia #36</b></h4>
-					<button>Comprar</button>
+					<p>$13.000</p>
+					<button id="btn">Comprar</button>
 				</div>
 			</div>
 	
@@ -68,33 +78,67 @@
 				<img src="./assets/img/Db-super-15.webp" alt="Dragon Ball Super #15">
 				<div class="container">
 					<h4><b>Dragon Ball Super #15</b></h4>
-					<button>Comprar</button>
+					<p>$13.000</p>
+					<button id="btn">Comprar</button>
 				</div>
 			</div>
 		</section>
-
-		<section class="reseña">
-			<h2>Opiniones de Usuarios</h2>
-			<div class="grid-reseñas">
-				<div class="reseña-item">
-					<h4>Juan Pérez</h4>
-					<p>¡Excelente tienda!. Compré Dragon Ball Super #22 y llegó en perfectas condiciones.</p>
-					<div class="estrellas">⭐⭐⭐⭐⭐</div>
+		<div id="titulo-manga">
+		<h1>Seinen</h1>
+		</div>
+		
+		<section class="producto-seinen">
+			<div class="card">
+				<img src="./assets/img/uzumaki.webp" alt="Uzumaki Tomo Único">
+				<div class="container">
+					<h4><b>Uzumaki Tomo Único</b></h4>
+					<p>$13.000</p>
+					<button id="btn">Comprar</button>
 				</div>
-				<div class="reseña-item">
-					<h4>Ana Martínez</h4>
-					<p>Me encantó el servicio al cliente. ¡Definitivamente volveré a comprar!</p>
-					<div class="estrellas">⭐⭐⭐⭐</div>
+			</div>
+	
+			<div class="card">
+				<img src="./assets/img/vagabond-2.webp" alt="Vagabond #2">
+				<div class="container">
+					<h4><b>Vagabond #2</b></h4>
+					<p>$13.000</p>
+					<button id="btn">Comprar</button>
 				</div>
-				<div class="reseña-item">
-					<h4>Carlos López</h4>
-					<p>Buena selección de mangas, pero el envío fue un poco lento.</p>
-					<div class="estrellas">⭐⭐⭐</div>
+			</div>
+	
+			<div class="card">
+				<img src="./assets/img/vinland-saga-7.webp" alt="Vinland Saga volumen 7">
+				<div class="container">
+					<h4><b>Vinland Saga #7</b></h4>
+					<p>$13.000</p>
+					<button id="btn">Comprar</button>
 				</div>
-				<div class="reseña-item">
-					<h4>Lucía Gómez</h4>
-					<p>Gran experiencia de compra, me encanta One Piece.</p>
-					<div class="estrellas">⭐⭐⭐⭐⭐</div>
+			</div>
+	
+			<div class="card">
+				<img src="./assets/img/vagabond-4.webp" alt="Vagabond volumen 4">
+				<div class="container">
+					<h4><b>Vagabond #4</b></h4>
+					<p>$13.000</p>
+					<button id="btn">Comprar</button>
+				</div>
+			</div>
+	
+			<div class="card">
+				<img src="./assets/img/solanin.webp" alt="Solanin tomo único">
+				<div class="container">
+					<h4><b>Solanin Tomo Único</b></h4>
+					<p>$13.000</p>
+					<button id="btn">Comprar</button>
+				</div>
+			</div>
+	
+			<div class="card">
+				<img src="./assets/img/reigen.webp" alt="Reigen nivel 131 de espiritismo">
+				<div class="container">
+					<h4><b>Reigen Tomo Único</b></h4>
+					<p>$13.000</p>
+					<button id="btn">Comprar</button>
 				</div>
 			</div>
 		</section>
@@ -114,6 +158,10 @@
 		</div>
 	</footer>
 	
+	 <!-- jQuery and Bootstrap Bundle (includes Popper) -->
+	 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 </html>

@@ -12,47 +12,46 @@ html, body {
 body {
     display: flex;
     flex-direction: column;
-    height: 100vh;
 }
 
-/* Header */
-header {
+/* Header y Footer */
+header, footer {
     width: 100%;
     background: black;
-    margin-bottom: 20px;
-    padding: 10px 0;
+    color: #f2f2f2;
+    padding: 20px 0;
 }
 
-header .wrapper {
+header .wrapper, footer .wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 90%;
     max-width: 1000px;
     margin: auto;
+    width: 90%;
 }
 
 header .logo {
-    color: #f2f2f2;
-    font-size: 36px; /* Mantener tamaño grande en escritorio */
+    color: #f56f3a;
+    font-size: 36px;
 }
 
-/* Navegación */
-header nav {
+header nav, footer .social-links {
     display: flex;
     flex-wrap: wrap; /* Permitir que los enlaces se ajusten */
+    justify-content: center; /* Centrar enlaces en footer */
 }
 
-header nav a {
+header nav a, footer .social-links a {
     color: #fff;
     text-decoration: none;
     padding: 10px 20px;
     font-size: 20px;
     font-weight: bold;
-    transition: all 500ms ease;
+    transition: background 0.5s ease, font-size 0.5s ease;
 }
 
-header nav a:hover {
+header nav a:hover, footer .social-links a:hover {
     background: #f56f3a;
     border-radius: 50px;
 }
@@ -62,36 +61,73 @@ main {
     flex: 1;
 }
 
-#titulo-shonen {
+#titulo-manga {
     text-align: center;
-    margin-bottom: 20px;
+    margin: 40px 0;
+    color: #f56f3a;
 }
 
-.producto-shonen {
+.producto-shonen, .producto-seinen {
     display: flex;
-    flex-wrap: wrap; /* Permitir que las cards se muevan a la siguiente línea */
+    flex-wrap: wrap;
     justify-content: center;
     gap: 20px; /* Espacio entre cards */
 }
 
-/* Card */
 .card {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    border-radius: 5px;
-    width: 200px; /* Ancho estándar */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    width: 200px;
     text-align: center;
     background-color: #fff;
+    overflow: hidden;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card img {
-    border-radius: 5px 5px 0 0;
+    border-radius: 10px 10px 0 0;
     width: 100%;
     height: auto;
+    transition: transform 0.3s ease;
 }
 
-h4 {
-    font-size:small;
+.card:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+.container {
+    padding: 15px;
+}
+
+.container h4, .reseña-item h4 {
+    margin: 10px 0;
+}
+
+.container p {
+    margin: 5px 0;
+}
+
+/* Botón */
+#btn {
+    border-radius: 6px;
+    height: 40px;
+    width: 100%;
+    background-color: #f56f3a;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#btn:hover {
+    background-color: #d45a30;
 }
 
 /* Estilos para reseñas */
@@ -100,14 +136,9 @@ h4 {
     background-color: #f9f9f9;
 }
 
-.reseña h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
 .grid-reseñas {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* 2-4 columnas responsivas */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px; /* Espacio entre reseñas */
 }
 
@@ -119,11 +150,6 @@ h4 {
     text-align: center;
 }
 
-.reseña-item h4 {
-    margin-bottom: 10px;
-    font-size: 18px;
-}
-
 .reseña-item p {
     margin-bottom: 10px;
     font-size: 14px;
@@ -133,16 +159,13 @@ h4 {
     font-size: 20px; /* Tamaño de las estrellas */
 }
 
-
-
-
 /* Responsive */
 @media (max-width: 768px) {
     header .logo {
         font-size: 24px; /* Ajustar tamaño de la fuente */
     }
 
-    header nav a {
+    header nav a, footer .social-links a {
         padding: 10px 15px; /* Ajustar padding */
         font-size: 18px; /* Ajustar tamaño de fuente */
     }
@@ -153,17 +176,17 @@ h4 {
 }
 
 @media (max-width: 480px) {
-    header .wrapper {
+    header .wrapper, footer .wrapper {
         flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
         align-items: center; /* Centrar elementos */
     }
 
-    header nav {
+    header nav, footer .social-links {
         justify-content: center; /* Centrar enlaces en móviles */
         width: 100%;
     }
 
-    header nav a {
+    header nav a, footer .social-links a {
         padding: 10px; /* Reducir el padding */
         font-size: 16px; /* Ajustar tamaño de la fuente */
     }
@@ -177,43 +200,9 @@ h4 {
         gap: 10px; /* Reducir espacio entre las cards */
     }
 
-    #titulo-shonen {
+    #titulo-manga {
         font-size: 24px; /* Ajustar tamaño de título en móvil */
     }
-}
-
-/* Footer */
-footer {
-    width: 100%;
-    background: black;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 20px 0;
-}
-
-footer .wrapper {
-    display: flex;
-    flex-direction: column; /* Cambiar a columna para móviles */
-    align-items: center; /* Centrar contenido */
-    max-width: 1000px;
-    margin: auto;
-    padding: 0 10px;
-}
-
-footer .social-links {
-    display: flex;
-    justify-content: center; /* Centrar enlaces sociales */
-}
-
-footer .social-links a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
-    font-size: 18px;
-}
-
-footer .social-links a:hover {
-    color: #f56f3a;
 }
 
 footer p {
