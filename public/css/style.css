@@ -34,6 +34,8 @@ header .wrapper, footer .wrapper {
 header .logo {
     color: #f56f3a;
     font-size: 36px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
 }
 
 header nav, footer .social-links {
