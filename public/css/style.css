@@ -51,6 +51,7 @@ header nav a, footer .social-links a {
     font-size: 20px;
     font-weight: bold;
     transition: background 0.5s ease, font-size 0.5s ease;
+    
 }
 
 header nav a:hover, footer .social-links a:hover {
@@ -67,6 +68,8 @@ main {
     text-align: center;
     margin: 40px 0;
     color: #f56f3a;
+    font-family: "Oswald", sans-serif;
+    font-weight: bold;
 }
 
 .producto-shonen, .producto-seinen {
@@ -106,10 +109,15 @@ main {
 
 .container {
     padding: 15px;
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: bolder;
+    font-style: normal;
 }
 
 .container h4, .reseña-item h4 {
     margin: 10px 0;
+    font-family: 'Poppins', sans-serif;
 }
 
 .container p {
@@ -126,6 +134,7 @@ main {
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-family: 'Poppins', sans-serif;
 }
 
 #btn:hover {
