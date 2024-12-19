@@ -43,7 +43,13 @@ document.addEventListener("DOMContentLoaded", () => {
         const producto = productos.find((p) => p.id == productoId);
 
         if (!producto) return;
-        carrito.push(producto);
+
+        const productoExistente = carrito.find((item) => item.id == productoId);
+        if (productoExistente) {
+            productoExistente.cantidad++;
+        } else {
+            carrito.push({ ...producto, cantidad: 1 });
+        }
 
         Swal.fire({
             title: "Producto añadido",
@@ -69,7 +75,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 <h1 style="text-align: center;">Carrito de compras</h1>
                 <div id="carrito-items"></div>
                 <p id="total">Total: $${calcularTotal()}</p>
-                <button id="finalizar-compra">Finalizar compra</button>
+                <div class="botones">
+                    <button id="finalizar-compra">Finalizar compra</button>
+                    <button id="volver-inicio">Volver al inicio</button>
+                </div>
             `;
 
             const carritoItems = document.getElementById("carrito-items");
@@ -81,22 +90,39 @@ document.addEventListener("DOMContentLoaded", () => {
                     <div>
                         <h4>${producto.nombre}</h4>
                         <p>Precio: $${producto.precio}</p>
+                        <div class="cantidad">
+                            <label for="cantidad-${index}">Cantidad:</label>
+                            <input type="number" id="cantidad-${index}" value="${producto.cantidad}" min="1">
+                        </div>
                         <button class="btn-eliminar" data-index="${index}">Eliminar</button>
                     </div>
                 `;
                 carritoItems.appendChild(item);
+
+                // Agregar event listener para cambiar cantidad
+                item.querySelector(`#cantidad-${index}`).addEventListener("change", (e) => cambiarCantidad(e, index));
+
+                // Agregar event listener para eliminar producto
+                item.querySelector(".btn-eliminar").addEventListener("click", eliminarDelCarrito);
             });
 
-            document.querySelectorAll(".btn-eliminar").forEach((button) =>
-                button.addEventListener("click", eliminarDelCarrito)
-            );
-
             document.getElementById("finalizar-compra").addEventListener("click", finalizarCompra);
+            document.getElementById("volver-inicio").addEventListener("click", () => location.reload());
         } else {
             // Actualiza solo el total si no se redirige
             const totalElement = document.getElementById("total");
             if (totalElement) totalElement.textContent = `Total: $${calcularTotal()}`;
         }
+    }
+
+    function cambiarCantidad(event, index) {
+        const nuevaCantidad = parseInt(event.target.value);
+        if (nuevaCantidad < 1) {
+            carrito.splice(index, 1);
+        } else {
+            carrito[index].cantidad = nuevaCantidad;
+        }
+        actualizarCarritoUI(true);
     }
 
     function eliminarDelCarrito(event) {
@@ -106,7 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function calcularTotal() {
-        return carrito.reduce((total, producto) => total + producto.precio, 0).toFixed(2);
+        return carrito.reduce((total, producto) => total + producto.precio * producto.cantidad, 0).toFixed(2);
     }
 
     function finalizarCompra() {
