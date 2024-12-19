@@ -222,6 +222,43 @@ main {
     }
 }
 
+.carrito-item {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.carrito-item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+#total {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+#finalizar-compra {
+    background-color: #f56f3a;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#finalizar-compra:hover {
+    background-color: #d45a30;
+}
+
+
 footer p {
     margin: 10px 0;
 }
