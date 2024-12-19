@@ -40,8 +40,8 @@ header .logo {
 
 header nav, footer .social-links {
     display: flex;
-    flex-wrap: wrap; /* Permitir que los enlaces se ajusten */
-    justify-content: center; /* Centrar enlaces en footer */
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 header nav a, footer .social-links a {
@@ -51,7 +51,6 @@ header nav a, footer .social-links a {
     font-size: 20px;
     font-weight: bold;
     transition: background 0.5s ease, font-size 0.5s ease;
-    
 }
 
 header nav a:hover, footer .social-links a:hover {
@@ -76,7 +75,7 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px; /* Espacio entre cards */
+    gap: 20px;
 }
 
 .card {
@@ -124,21 +123,28 @@ main {
     margin: 5px 0;
 }
 
-/* Botón */
-#btn {
-    border-radius: 6px;
-    height: 40px;
-    width: 100%;
-    background-color: #f56f3a;
-    color: #fff;
+/* Botón "Comprar" */
+.btn-comprar {
+    background-color: #ff6f61; /* Fondo principal */
+    color: white;
+    padding: 10px 20px;
     border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    border-radius: 6px;
+    font-size: 16px;
     font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-#btn:hover {
-    background-color: #d45a30;
+.btn-comprar:hover {
+    background-color: #ff4433;
+    transform: scale(1.05);
+}
+
+.btn-comprar:active {
+    background-color: #cc3529;
+    transform: scale(0.95);
 }
 
 /* Estilos para reseñas */
@@ -150,7 +156,7 @@ main {
 .grid-reseñas {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px; /* Espacio entre reseñas */
+    gap: 20px;
 }
 
 .reseña-item {
@@ -167,57 +173,54 @@ main {
 }
 
 .estrellas {
-    font-size: 20px; /* Tamaño de las estrellas */
+    font-size: 20px;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
     header .logo {
-        font-size: 24px; /* Ajustar tamaño de la fuente */
+        font-size: 24px;
     }
 
     header nav a, footer .social-links a {
-        padding: 10px 15px; /* Ajustar padding */
-        font-size: 18px; /* Ajustar tamaño de fuente */
+        padding: 10px 15px;
+        font-size: 18px;
     }
 
     .card {
-        width: 150px; /* Hacer las cards más pequeñas en tabletas */
+        width: 150px;
     }
 }
 
 @media (max-width: 480px) {
     header .wrapper, footer .wrapper {
-        flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
-        align-items: center; /* Centrar elementos */
+        flex-direction: column;
+        align-items: center;
     }
 
     header nav, footer .social-links {
-        justify-content: center; /* Centrar enlaces en móviles */
+        justify-content: center;
         width: 100%;
     }
 
     header nav a, footer .social-links a {
-        padding: 10px; /* Reducir el padding */
-        font-size: 16px; /* Ajustar tamaño de la fuente */
+        padding: 10px;
+        font-size: 16px;
     }
 
     .card {
-        width: 90%; /* Hacer que las cards ocupen el 90% del ancho */
-        max-width: 300px; /* Limitar el ancho máximo */
+        width: 90%;
+        max-width: 300px;
     }
 
     .producto-shonen {
-        gap: 10px; /* Reducir espacio entre las cards */
+        gap: 10px;
     }
 
     #titulo-manga {
-        font-size: 24px; /* Ajustar tamaño de título en móvil */
+        font-size: 24px;
     }
 }
-
-
-
 
 footer p {
     margin: 10px 0;
