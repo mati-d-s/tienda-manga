@@ -44,50 +44,65 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (!producto) return;
         carrito.push(producto);
-        actualizarCarritoUI();
 
         Swal.fire({
             title: "Producto añadido",
             text: `Has añadido ${producto.nombre} al carrito.`,
             icon: "success",
+            showCancelButton: true,
+            confirmButtonText: "Finalizar compra",
+            cancelButtonText: "Seguir mirando",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                actualizarCarritoUI(true); // Redirige a la página del carrito
+            } else {
+                actualizarCarritoUI(false); // Actualiza el carrito sin redirigir
+            }
         });
     }
 
-    function actualizarCarritoUI() {
+    function actualizarCarritoUI(redirigir = false) {
         const main = document.querySelector("main");
-        main.innerHTML = `
-            <h1>Carrito de compras</h1>
-            <div id="carrito-items"></div>
-            <p id="total">Total: $${calcularTotal()}</p>
-            <button id="finalizar-compra">Finalizar compra</button>
-        `;
 
-        const carritoItems = document.getElementById("carrito-items");
-        carrito.forEach((producto, index) => {
-            const item = document.createElement("div");
-            item.classList.add("carrito-item");
-            item.innerHTML = `
-                <img src="${producto.imagen}" alt="${producto.nombre}">
-                <div>
-                    <h4>${producto.nombre}</h4>
-                    <p>Precio: $${producto.precio}</p>
-                    <button class="btn-comprar btn-eliminar" data-index="${index}">Eliminar</button>
-                </div>
+        if (redirigir) {
+            main.innerHTML = `
+                <h1 style="text-align: center;">Carrito de compras</h1>
+                <div id="carrito-items"></div>
+                <p id="total">Total: $${calcularTotal()}</p>
+                <button id="finalizar-compra">Finalizar compra</button>
             `;
-            carritoItems.appendChild(item);
-        });
 
-        document.querySelectorAll(".btn-eliminar").forEach((button) =>
-            button.addEventListener("click", (e) => eliminarDelCarrito(e))
-        );
+            const carritoItems = document.getElementById("carrito-items");
+            carrito.forEach((producto, index) => {
+                const item = document.createElement("div");
+                item.classList.add("carrito-item");
+                item.innerHTML = `
+                    <img src="${producto.imagen}" alt="${producto.nombre}">
+                    <div>
+                        <h4>${producto.nombre}</h4>
+                        <p>Precio: $${producto.precio}</p>
+                        <button class="btn-eliminar" data-index="${index}">Eliminar</button>
+                    </div>
+                `;
+                carritoItems.appendChild(item);
+            });
 
-        document.getElementById("finalizar-compra").addEventListener("click", finalizarCompra);
+            document.querySelectorAll(".btn-eliminar").forEach((button) =>
+                button.addEventListener("click", eliminarDelCarrito)
+            );
+
+            document.getElementById("finalizar-compra").addEventListener("click", finalizarCompra);
+        } else {
+            // Actualiza solo el total si no se redirige
+            const totalElement = document.getElementById("total");
+            if (totalElement) totalElement.textContent = `Total: $${calcularTotal()}`;
+        }
     }
 
     function eliminarDelCarrito(event) {
         const index = event.target.dataset.index;
         carrito.splice(index, 1);
-        actualizarCarritoUI();
+        actualizarCarritoUI(true); // Actualiza la UI completa al eliminar un producto
     }
 
     function calcularTotal() {

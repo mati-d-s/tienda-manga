@@ -258,6 +258,33 @@ main {
     background-color: #d45a30;
 }
 
+/* Botón "Eliminar" */
+.btn-eliminar {
+    background-color: #ff6f61; /* Fondo principal */
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.btn-eliminar:hover {
+    background-color: #ff4433;
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-eliminar:active {
+    background-color: #cc3529;
+    transform: scale(0.95);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
 
 footer p {
     margin: 10px 0;
