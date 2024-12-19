@@ -1,0 +1,91 @@
+{
+    "shonen": [
+      {
+        "id": 1,
+        "nombre": "Dragon Ball Super #22",
+        "precio": 11500,
+        "imagen": "./assets/img/DB-super-22.webp",
+        "descripcion": "Continúa la saga épica de Dragon Ball con la nueva entrega de Dragon Ball Super #22."
+      },
+      {
+        "id": 2,
+        "nombre": "Slam Dunk #15",
+        "precio": 15000,
+        "imagen": "./assets/img/Slam-dunk-15.webp",
+        "descripcion": "Slam Dunk es uno de los mangas más populares sobre baloncesto. ¡No te lo pierdas!"
+      },
+      {
+        "id": 3,
+        "nombre": "Mob Psycho One #1",
+        "precio": 13000,
+        "imagen": "./assets/img/mob-psycho-one.webp",
+        "descripcion": "Mob Psycho One es la historia de un joven con poderes psíquicos. Una aventura con mucha acción."
+      },
+      {
+        "id": 4,
+        "nombre": "One Piece #1",
+        "precio": 13000,
+        "imagen": "./assets/img/one-piece-1.webp",
+        "descripcion": "El inicio de la épica aventura de Luffy y su tripulación en busca del One Piece."
+      },
+      {
+        "id": 5,
+        "nombre": "Boku No Hero Academia #36",
+        "precio": 13000,
+        "imagen": "./assets/img/boku-hero-no-academia-36.webp",
+        "descripcion": "El volumen 36 de Boku No Hero Academia sigue desarrollando las grandes batallas de los héroes."
+      },
+      {
+        "id": 6,
+        "nombre": "Dragon Ball Super #15",
+        "precio": 13000,
+        "imagen": "./assets/img/Db-super-15.webp",
+        "descripcion": "Dragon Ball Super sigue con su emocionante historia llena de acción y nuevos desafíos."
+      }
+    ],
+    "seinen": [
+      {
+        "id": 7,
+        "nombre": "Uzumaki Tomo Único",
+        "precio": 13000,
+        "imagen": "./assets/img/uzumaki.webp",
+        "descripcion": "Uzumaki es una historia de horror psicológico que te mantendrá en tensión hasta el final."
+      },
+      {
+        "id": 8,
+        "nombre": "Vagabond #2",
+        "precio": 13000,
+        "imagen": "./assets/img/vagabond-2.webp",
+        "descripcion": "Vagabond es un manga de samuráis con una historia profunda y fascinante."
+      },
+      {
+        "id": 9,
+        "nombre": "Vinland Saga #7",
+        "precio": 13000,
+        "imagen": "./assets/img/vinland-saga-7.webp",
+        "descripcion": "Vinland Saga cuenta la historia de vikingos y su lucha por la supervivencia."
+      },
+      {
+        "id": 10,
+        "nombre": "Vagabond #4",
+        "precio": 13000,
+        "imagen": "./assets/img/vagabond-4.webp",
+        "descripcion": "Sigue la intensa lucha de los samuráis en este volumen de Vagabond."
+      },
+      {
+        "id": 11,
+        "nombre": "Solanin Tomo Único",
+        "precio": 13000,
+        "imagen": "./assets/img/solanin.webp",
+        "descripcion": "Solanin es un manga que explora los desafíos de la juventud y la vida adulta."
+      },
+      {
+        "id": 12,
+        "nombre": "Reigen Tomo Único",
+        "precio": 13000,
+        "imagen": "./assets/img/reigen.webp",
+        "descripcion": "Reigen es una historia sobre espiritismo con una mezcla de comedia y horror."
+      }
+    ]
+  }
+  
