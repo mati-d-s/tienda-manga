@@ -40,6 +40,18 @@ document.addEventListener("DOMContentLoaded", () => {
         // Si no es válido, prevenir el envío
         if (!isValid) {
             event.preventDefault();
+        } else {
+            // Prevenir el envío real para la demostración
+            event.preventDefault();
+            // Mostrar SweetAlert de confirmación
+            Swal.fire({
+                title: "¡Mensaje enviado!",
+                text: "Gracias por su mensaje. En breve lo contactaremos.",
+                icon: "success",
+                confirmButtonText: "Aceptar",
+            }).then(() => {
+                form.reset(); // Opcional: Reiniciar el formulario después de enviar
+            });
         }
     });
 
