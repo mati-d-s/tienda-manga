@@ -81,6 +81,7 @@ El archivo `productos.json` contiene datos de ejemplo para los productos:
 
 **Vercel**: Subir el proyecto para despliegue rápido.
 
+https://tienda-manga.vercel.app/index.html
 
 ---
 
