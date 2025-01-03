@@ -20,6 +20,7 @@ header, footer {
     background: black;
     color: #f2f2f2;
     padding: 20px 0;
+    text-decoration: none;
 }
 
 header .wrapper, footer .wrapper {
@@ -31,11 +32,12 @@ header .wrapper, footer .wrapper {
     width: 90%;
 }
 
-header .logo {
+header .logo a {
     color: #f56f3a;
     font-size: 36px;
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
+    text-decoration: none;
 }
 
 header nav, footer .social-links {
